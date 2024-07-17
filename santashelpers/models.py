@@ -2,38 +2,6 @@ from santashelpers import db
 from sqlalchemy.orm import relationship
 
 
-class User(UserMixin, db.Model):
-    # schema for the User model
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(15), unique=True, nullable=False)
-    email_address = db.Column(db.String(), nullable=False)
-    full_name = db.Column(db.String(25), nullable=False)
-    password = db.Column(db.String(50), nullable=False)
-    
-
-    def __init__(self, username, email_address, full_name, password):
-        self.username = username
-        self.email_address = email_address
-        self.full_name = full_name
-        self.password = password
-
-
-    def __repr__(self):
-        return f'<User {self.username}>'
-
-
-class LoginForm(Form):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-
-
-class RegisterForm(Form):
-    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
-    full_name = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
-    email_address = StringField('Email', validators=[DataRequired(), Length(min=2, max=30)])
-    password = PasswordField('Password', validators=[DataRequired()])
-    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Sign Up')
 
 
 class List(db.Model):
