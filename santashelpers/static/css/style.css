@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/013/442/432/non_2x/christmas-winter-border-background-free-vector.jpg);
+    background-size: cover, contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+ul {
+    list-style-type: square;
+}
