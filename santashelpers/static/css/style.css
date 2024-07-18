@@ -1,3 +1,9 @@
+/*--------------------------------------------Colors*/
+
+
+
+
+/*--------------------------------------------Body*/
 body {
     display: flex;
     min-height: 100vh;
@@ -12,6 +18,30 @@ main {
     flex: 1 0 auto;
 }
 
-ul {
-    list-style-type: square;
+
+/*--------------------------------------------NavBar*/
+nav {
+    background-image: url(https://thumbs.dreamstime.com/b/abstract-holiday-new-year-merry-christmas-border-transparent-background-vector-illustration-eps-130860708.jpg);
+}
+
+.brand-logo {
+    font-weight: 800;
+    text-shadow:
+    4px 0 black,
+    0 4px black,
+    -2px 0 black,
+    0 -2px black;
+}
+
+.nav-list li{
+    font-weight: 800;
+    text-shadow:
+    4px 0 black,
+    0 4px black,
+    -2px 0 black,
+    0 -2px black;
+}
+/*--------------------------------------------Footer*/
+footer {
+    background-image: url(https://thumbs.dreamstime.com/b/abstract-holiday-new-year-merry-christmas-border-transparent-background-vector-illustration-eps-130860708.jpg);
 }

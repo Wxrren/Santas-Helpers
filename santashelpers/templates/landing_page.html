@@ -11,6 +11,12 @@
         <span class="card-title activator grey-text text-darken-4">Grace got her christmas wish after writing her list<i
                 class="fas fa-solid fa-plus right"></i></span>
         <p>Press the + to see Grace's christmas list</p>
+
+        <div class="card-action">
+            <a href="{{ url_for('register_user') }}" class="btn-large green darken-4">Register</a>
+            <a href="{{ url_for('sign_in') }}" class="btn-large red">Sign in</a>
+        </div>
+
     </div>
     <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -35,10 +41,7 @@
         </div>
     </div>
 
-    <div class="card-action">
-        <a href="{{ url_for('register_user') }}" class="btn green accent-4">Register</a>
-        <a href="{{ url_for('sign_in') }}" class="btn red">Sign in</a>
-    </div>
+    
 
 
     {% endblock %}
