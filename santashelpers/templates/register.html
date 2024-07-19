@@ -1,9 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align">Register or Sign in to start viewing and creating chritmas lists!</h3>
 
-
+<div class="row card-panel grey lighten-5">
+    <h3 class="light-blue-text text-darken-4 center-align">Register here!</h3>
+    <form class="col s12" method="POST" action="">
+         <!-- Email -->
+         <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-solid fa-envelope prefix light-blue-text text-darken-4"></i>
+                <input id="email_address" name="email_address" placeholder="head_elf@santasgrotto.com" minlength="5" maxlength="50"
+                type="email" class="validate" required>
+            <label for="email_address">Email Address</label>
+            </div>
+        </div>
+        <!-- Full Name-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-solid fa-user prefix light-blue-text text-darken-4"></i>
+                <input id="full_name" name="full_name" placeholder="Santa Claus" minlength="5" maxlength="30"
+                    type="text" class="validate" required>{{ form.email_address}}
+                <label for="full_name">Full Name</label>
+            </div>
+        </div>
+        <!-- Username-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-solid fa-user prefix light-blue-text text-darken-4"></i>
+                <input id="user_name" name="user_name" placeholder="Santassleigh24" minlength="5" maxlength="30"
+                    type="text" class="validate" required>
+                <label for="user_name">Username</label>
+            </div>
+        </div>
+        <!-- Password-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-solid fa-lock prefix light-blue-text text-darken-4"></i>
+                <input id="password" name="password" placeholder="######" minlength="5" maxlength="26"
+                    type="password" class="validate" required>
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large green darken-4">
+                    Register <i class="fas fa-edit right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 
 
 {% endblock %}
