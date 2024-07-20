@@ -1,6 +1,6 @@
 from flask import Flask, flash, redirect, url_for, session, logging, request, render_template
 from santashelpers import db, app
-from santashelpers.models import User, generate_password_hash, check_password_hash
+from santashelpers.models import Activeuser, generate_password_hash, check_password_hash
 
 
 
@@ -20,7 +20,7 @@ def register_user():
         username = request.form.get("username")
         password = request.form.get("password")
         
-        new_user = User(
+        new_user = Activeuser(
             email=email,
             fullname=fullname,
             username=username,
