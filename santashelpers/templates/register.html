@@ -4,12 +4,12 @@
 
 <div class="row card-panel grey lighten-5">
     <h3 class="light-blue-text text-darken-4 center-align">Register here!</h3>
-    <form class="col s12" method="POST" action="">
+    <form class="col s12" method="POST" action="{{ url_for('register_user') }}">
          <!-- Email -->
          <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-solid fa-envelope prefix light-blue-text text-darken-4"></i>
-                <input id="email_address" name="email_address" placeholder="head_elf@santasgrotto.com" minlength="5" maxlength="50"
+                <input id="email" name="email" placeholder="head_elf@santasgrotto.com" minlength="5" maxlength="50"
                 type="email" class="validate" required>
             <label for="email_address">Email Address</label>
             </div>
@@ -18,18 +18,18 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-solid fa-user prefix light-blue-text text-darken-4"></i>
-                <input id="full_name" name="full_name" placeholder="Santa Claus" minlength="5" maxlength="30"
-                    type="text" class="validate" required>{{ form.email_address}}
-                <label for="full_name">Full Name</label>
+                <input id="fullname" name="fullname" placeholder="Santa Claus" minlength="5" maxlength="30"
+                    type="text" class="validate" required>
+                <label for="fullname">Full Name</label>
             </div>
         </div>
         <!-- Username-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-solid fa-user prefix light-blue-text text-darken-4"></i>
-                <input id="user_name" name="user_name" placeholder="Santassleigh24" minlength="5" maxlength="30"
+                <input id="username" name="username" placeholder="Santassleigh24" minlength="5" maxlength="30"
                     type="text" class="validate" required>
-                <label for="user_name">Username</label>
+                <label for="username">Username</label>
             </div>
         </div>
         <!-- Password-->
