@@ -19,7 +19,21 @@ def register_user():
         fullname = request.form.get("fullname")
         username = request.form.get("username")
         password = request.form.get("password")
+
+        # Checking for existing users email
+        existing_email = Activeuser.query.filter_by(email=email).first()
+        if existing_email == True:
+            flash('Email already registered. Please log in.', 'error')
+            return render_template('register.html', error="Username already registered.")
+            
+
+        # Checking for existing users username
+        existing_username = Activeuser.query.filter_by(username=username).first()
+        if existing_username:
+            flash('Username already registered. Please log in.', 'error')
+            return render_template('register.html', error="Username already registered.")
         
+        # New user sign up
         new_user = Activeuser(
             email=email,
             fullname=fullname,
@@ -31,7 +45,7 @@ def register_user():
         db.session.add(new_user)
         db.session.commit()
         
-        flash('You have successfully registered!', 'success')
+        flash('You have successfully registered! Feel free to sign in.', 'success')
         return redirect(url_for('sign_in'))
     
     return render_template('register.html')
