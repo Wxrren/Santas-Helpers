@@ -53,5 +53,24 @@ def register_user():
 
 @app.route("/sign_in", methods=["GET", "POST"])
 def sign_in():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        # Search for the user
+        existing_site_user = Activeuser.query.filter_by(username=username).first()
+
+        # Check the user exists and the details are correct
+        if existing_site_user and check_password_hash(existing_site_user.password, password):
+            # success
+            session['username'] = username
+            flash('You have successfully signed in!', 'success')
+            return redirect(url_for('site_main'))
+        else:
+            flash("Oh no! The north pole doesn't recognise the username or password. Try Again.", 'error')
     return render_template('sign_in.html')
 
+
+@app.route("/mainpage", methods=["GET", "POST"])
+def mainpage():
+    return render_template("index.html")
