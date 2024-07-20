@@ -1,9 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align">Register or Sign in to start viewing and creating chritmas lists!</h3>
+<div class="row card-panel grey lighten-5">
+    <h3 class="light-blue-text text-darken-4 center-align">Sign in</h3>
+    <form class="col s12" method="POST" action="{{ url_for('mainpage') }}">
+        <!-- Username-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-solid fa-user prefix light-blue-text text-darken-4"></i>
+                <input id="username" name="username" placeholder="Santassleigh24" minlength="5" maxlength="30"
+                    type="text" class="validate" required>
+                <label for="username">Username</label>
+            </div>
+        </div>
+        <!-- Password-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-solid fa-lock prefix light-blue-text text-darken-4"></i>
+                <input id="password" name="password" placeholder="######" minlength="5" maxlength="26" type="password"
+                    class="validate" required>
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large green darken-4">
+                    Sign in <i class="fas fa-edit right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 
-
-
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <h3 class="flashes">{{ message }}</h3>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
 
 {% endblock %}
