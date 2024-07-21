@@ -65,7 +65,7 @@ def sign_in():
             # success
             session['username'] = username
             flash('You have successfully signed in!', 'success')
-            return redirect(url_for('site_main'))
+            return redirect(url_for('mainpage'))
         else:
             flash("Oh no! The north pole doesn't recognise the username or password. Try Again.", 'error')
     return render_template('sign_in.html')

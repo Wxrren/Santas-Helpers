@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -18,20 +19,27 @@
 
     <header>
         <!-- top navbar -->
-         <div class="navbar-fixed">
-        <nav class="green darken-4">
-            <div class="nav-wrapper">
-            <a href="{{ url_for('home') }}" class="brand-logo">Santas Helpers!
-            </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-            <ul class="right hide-on-med-and-down">
-                <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="">New Task</a></li>
-                <li><a href="">Categories</a></li>
-            </ul>
-            </div>
-        </nav>
-    </div>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    {% if 'username' in session %}
+                        <a href="{{ url_for('mainpage') }}" class="brand-logo amber-text">Santas Helpers!</a>
+                    {% else %}
+                        <a href="{{ url_for('home') }}" class="brand-logo amber-text">Santas Helpers!</a>
+                    {% endif %}
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                    <ul class="right hide-on-med-and-down">
+                        {% if 'username' in session %}
+                            <li><a href="{{ url_for('mainpage') }}">Home</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                        {% endif %}
+                        <li><a href="">New Task</a></li>
+                        <li><a href="">Categories</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
@@ -59,4 +67,5 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
+
 </html>

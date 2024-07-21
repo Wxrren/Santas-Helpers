@@ -3,7 +3,7 @@
 
 <div class="row card-panel grey lighten-5">
     <h3 class="light-blue-text text-darken-4 center-align">Sign in</h3>
-    <form class="col s12" method="POST" action="{{ url_for('mainpage') }}">
+    <form class="col s12" method="POST" action="{{ url_for('sign_in') }}">
         <!-- Username-->
         <div class="row">
             <div class="input-field col s12">
@@ -34,11 +34,11 @@
 </div>
 
 {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-        <h3 class="flashes">{{ message }}</h3>
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
+{% if messages %}
+{% for message in messages %}
+<h3 class="flashes">{{ message }}</h3>
+{% endfor %}
+{% endif %}
+{% endwith %}
 
 {% endblock %}
