@@ -1,6 +1,68 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h3 class="light-blue-text text-darken-4 center-align">Categories</h3>
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_list') }}" class="btn-large light-blue darken-2">
+            Add Category <i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
+</div>
 
+
+< <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator"
+            src="https://t4.ftcdn.net/jpg/06/37/40/49/360_F_637404905_5Fl5lRTykkau999Bld5kGAuyAB8tRIzs.jpg">
+    </div>
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Grace got her christmas wish after writing her list<i
+                class="fas fa-solid fa-plus right"></i></span>
+        <p>Press the + to see Grace's christmas list</p>
+    </div>
+    <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+        <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>d</li>
+            <li>e</li>
+            <li>f</li>
+        </ul>
+    </div>
+    </div>
+
+
+
+
+<div class="row">
+    {% for category in categories %}
+    <div class="col s12 m6 l3">
+        <div class="card light-blue darken-4 center-align">
+            <div class="card-content white-text">
+                <span class="card-title">{{ category.category_name }}</span>
+            </div>
+            <div class="card-action">
+                <a href="" class="btn green accent-4">Edit</a>
+                <a href="#modal-" class="btn red modal-trigger">Delete</a>
+
+                <!-- Modal Structure -->
+                <div id="modal-" class="modal">
+                    <div class="modal-content">
+                        <h4>Are you sure you want to delete this category?</h4>
+                        <p>This action cannot be undone and will delete related tasks.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="" class="btn red">Delete</a>
+                        <a href="" class="btn modal-close green accent-4">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
