@@ -82,8 +82,6 @@ def my_list():
 
 @app.route("/add_list", methods=["GET", "POST"])
 def add_list():
-    user_id = session.get('user_id')
-    
-    active_user = Activeuser.query.get(user_id)
-    
-    return render_template("add_list.html", active_user=active_user)
+   
+
+    return render_template("add_list.html")
