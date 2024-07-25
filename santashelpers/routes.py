@@ -1,7 +1,6 @@
 from flask import Flask, flash, redirect, url_for, session, logging, request, render_template
 from santashelpers import db, app
-from santashelpers.models import Activeuser, generate_password_hash, check_password_hash
-
+from santashelpers.models import Activeuser, generate_password_hash, check_password_hash, Christmas_lists
 
 
 
@@ -78,10 +77,46 @@ def mainpage():
 
 @app.route("/my_list", methods=["GET", "POST"])
 def my_list():
-    return render_template("my_list.html")
+    userlists = list(Christmas_lists.query.order_by(Christmas_lists.id).all())
+
+
+    return render_template("my_list.html", userlists=userlists)
 
 @app.route("/add_list", methods=["GET", "POST"])
 def add_list():
-   
+    if request.method == "POST":
 
+
+
+        # Retrieve form data
+        list_name = request.form.get("list_name")
+        due_date = request.form.get("due_date")
+        user_christmas_list = request.form.get("user_christmas_list")
+        letter_to_santa = True if request.form.get("letter_to_santa") == 'on' else False
+        milk_and_cookies = True if request.form.get("milk_and_cookies") == 'on' else False
+        favourite_reindeer = request.form.get("favourite_reindeer")
+
+        
+        # Create a new Christmas_lists instance
+        new_list = Christmas_lists(
+            list_name=list_name,
+            due_date=due_date,
+            user_christmas_list=user_christmas_list,
+            letter_to_santa=letter_to_santa,
+            milk_and_cookies=milk_and_cookies,
+            favourite_reindeer=favourite_reindeer,
+        )
+        
+        # Add the new list to the session and commit
+        db.session.add(new_list)
+        db.session.commit()
+
+        print(new_list)
+
+        return redirect(url_for('my_list'))
+
+
+    
     return render_template("add_list.html")
+
+    

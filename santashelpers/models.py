@@ -11,19 +11,11 @@ class Activeuser(db.Model):
     fullname = db.Column(db.String(25), nullable=False)
     username = db.Column(db.String(25), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
-    folders = db.relationship("Christmas_folders", backref=db.backref("activeuser", cascade="all, delete"), lazy=True)
-    lists = db.relationship("Christmas_lists", backref=db.backref("activeuser", cascade="all, delete"), lazy=True)
 
     def __repr__(self):
         return f"<User {self.id} - {self.username}>"
 
 
-class Christmas_folders(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    due_date = db.Column(db.Date, nullable=False)
-    folder_name = db.Column(db.String(25), unique=True, nullable=False)
-    lists = db.relationship("Christmas_lists", backref=db.backref("christmas_folders", cascade="all, delete"), lazy=True)
-    activeuser_id = db.Column(db.Integer, db.ForeignKey('activeuser.id'), nullable=False)
 
 
 
@@ -35,12 +27,12 @@ class Christmas_lists(db.Model):
     letter_to_santa = db.Column(db.Boolean, default=False, nullable=False)
     milk_and_cookies = db.Column(db.Boolean, default=False, nullable=False)
     favourite_reindeer = db.Column(db.Text, nullable=False)
-    activeuser_id = db.Column(db.Integer, db.ForeignKey('activeuser.id'), nullable=False)
-    folder = db.Column(db.Integer, db.ForeignKey("christmas_folders.id", ondelete="CASCADE"), nullable=False)
+
+
 
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
         return "#{0} - Task: {1} | Urgent: {2}".format(
-            self.id, self.task_name, self.is_urgent
+            self.id, self.list_name, self.due_date
         )
