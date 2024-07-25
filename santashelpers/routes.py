@@ -77,10 +77,13 @@ def mainpage():
 
 @app.route("/my_list", methods=["GET", "POST"])
 def my_list():
-    userlists = list(Christmas_lists.query.order_by(Christmas_lists.id).all())
+    userlists = list(Christmas_lists.query.order_by(Christmas_lists.user_christmas_list).all())
+    currentusers = list(Activeuser.query.order_by(Activeuser.username).all())
+
+    print(session)
 
 
-    return render_template("my_list.html", userlists=userlists)
+    return render_template("my_list.html", userlists=userlists, currentusers=currentusers)
 
 @app.route("/add_list", methods=["GET", "POST"])
 def add_list():

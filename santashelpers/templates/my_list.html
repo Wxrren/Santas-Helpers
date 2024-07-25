@@ -11,30 +11,33 @@
     </div>
 </div>
 
-
-
-< <div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator"
-            src="https://t4.ftcdn.net/jpg/06/37/40/49/360_F_637404905_5Fl5lRTykkau999Bld5kGAuyAB8tRIzs.jpg">
-    </div>
-    <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">Grace got her christmas wish after writing her list<i
-                class="fas fa-solid fa-plus right"></i></span>
-        <p>Press the + to see Grace's christmas list</p>
-    </div>
-    <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+<div class="row">
+    <div class="col s12 m6 l3 center-align">
         <ul>
-            <li>a</li>
-            <li>b</li>
-            <li>c</li>
-            <li>d</li>
-            <li>e</li>
-            <li>f</li>
-        </ul>
+            {% for userlist in userlists %}
+            < <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator"
+                        src="https://t4.ftcdn.net/jpg/06/37/40/49/360_F_637404905_5Fl5lRTykkau999Bld5kGAuyAB8tRIzs.jpg">
+                </div>
+                <div class="card-content">
+                    {% for currentuser in currentusers %}
+                    <span class="card-title activator grey-text text-darken-4">{{ currentuser.username }}'s list<i class="fas fa-solid fa-plus right"></i></span>
+                    {% endfor %}
+                    <p>Press the + to see Grace's christmas list</p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Card Title<i
+                            class="material-icons right">close</i></span>
+                    <ul>
+                        {{ userlists.list_name }}
+                    </ul>
+                </div>
     </div>
-    </div>
+    {% endfor %}
+    </ul>
+</div>
+</div>
 
 
 
