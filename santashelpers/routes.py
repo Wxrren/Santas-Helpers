@@ -63,7 +63,9 @@ def sign_in():
         if existing_site_user and check_password_hash(existing_site_user.password, password):
             # success
             session['username'] = username
+            session['user_id'] = existing_site_user.id
             flash('You have successfully signed in!', 'success')
+            print(session)
             return redirect(url_for('mainpage'))
         else:
             flash("Oh no! The north pole doesn't recognise the username or password. Try Again.", 'error')
@@ -77,18 +79,23 @@ def mainpage():
 
 @app.route("/my_list", methods=["GET", "POST"])
 def my_list():
-    userlists = list(Christmas_lists.query.order_by(Christmas_lists.user_christmas_list).all())
-    currentusers = list(Activeuser.query.order_by(Activeuser.username).all())
+    if 'user_id' not in session:
+            flash('Please log in to create a list.', 'info')
+            return redirect(url_for('sign_in'))
+    
+    current_user_id = session['user_id']
 
-    print(session)
+    current_user_lists = Christmas_lists.query.filter_by(owner_id=current_user_id).all()
 
 
-    return render_template("my_list.html", userlists=userlists, currentusers=currentusers)
+    return render_template("my_list.html", current_user_lists=current_user_lists)
 
 @app.route("/add_list", methods=["GET", "POST"])
 def add_list():
     if request.method == "POST":
-
+        if 'user_id' not in session:
+            flash('Please log in to create a list.', 'info')
+            return redirect(url_for('sign_in'))
 
 
         # Retrieve form data
@@ -108,6 +115,7 @@ def add_list():
             letter_to_santa=letter_to_santa,
             milk_and_cookies=milk_and_cookies,
             favourite_reindeer=favourite_reindeer,
+            owner_id=session['user_id']
         )
         
         # Add the new list to the session and commit
