@@ -11,6 +11,7 @@ class Activeuser(db.Model):
     fullname = db.Column(db.String(25), nullable=False)
     username = db.Column(db.String(25), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
+    christmas_lists = db.relationship("Christmas_lists", back_populates="owner")
 
     def __repr__(self):
         return f"<User {self.id} - {self.username}>"
@@ -27,6 +28,8 @@ class Christmas_lists(db.Model):
     letter_to_santa = db.Column(db.Boolean, default=False, nullable=False)
     milk_and_cookies = db.Column(db.Boolean, default=False, nullable=False)
     favourite_reindeer = db.Column(db.Text, nullable=False)
+    owner_id = db.Column(db.Integer, db.ForeignKey('activeuser.id'), nullable=False)
+    owner = db.relationship("Activeuser", back_populates="christmas_lists")
 
 
 
