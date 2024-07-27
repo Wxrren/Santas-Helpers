@@ -89,7 +89,6 @@ def my_list():
 
     current_user_lists = Christmas_lists.query.filter_by(owner_id=current_user_id).all()
 
-
     return render_template("my_list.html", current_user_lists=current_user_lists)
 
 @app.route("/add_list", methods=["GET", "POST"])
@@ -132,4 +131,32 @@ def add_list():
     
     return render_template("add_list.html")
 
+
+@app.route("/edit_list/<int:list_id>", methods=["GET", "POST"])
+def edit_list(list_id):
+    edit_user_list = Christmas_lists.query.get_or_404(list_id)
+
+    if edit_user_list.owner_id != session['user_id']:
+        flash('You do not have permission to edit this list.', 'warning')
+        return redirect(url_for('my_list'))
+
+    if request.method == "POST":
+        if 'user_id' not in session:
+            flash('Please log in to create a list.', 'info')
+            return redirect(url_for('sign_in'))
+
+        edit_user_list.list_name = request.form.get("list_name")
+        edit_user_list.due_date = request.form.get("due_date")
+        edit_user_list.user_christmas_list = request.form.get("user_christmas_list")
+        edit_user_list.letter_to_santa = True if request.form.get("letter_to_santa") == 'on' else False
+        edit_user_list.milk_and_cookies = True if request.form.get("milk_and_cookies") == 'on' else False
+        edit_user_list.favourite_reindeer = request.form.get("favourite_reindeer")
+        
+        db.session.commit()
+
+        print(list_id)
+
+        return redirect(url_for('my_list'))
+
     
+    return render_template("edit_list.html", list=edit_user_list)
