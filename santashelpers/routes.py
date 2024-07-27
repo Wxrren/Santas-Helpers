@@ -79,10 +79,12 @@ def mainpage():
 
 @app.route("/my_list", methods=["GET", "POST"])
 def my_list():
+    # Check the user is signed into the session
     if 'user_id' not in session:
             flash('Please log in to create a list.', 'info')
             return redirect(url_for('sign_in'))
     
+    # Search for the current user logged into the session and query's their lists
     current_user_id = session['user_id']
 
     current_user_lists = Christmas_lists.query.filter_by(owner_id=current_user_id).all()
