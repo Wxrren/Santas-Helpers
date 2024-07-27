@@ -2,31 +2,55 @@
 {% block content %}
 
 
-<h3 class="light-blue-text text-darken-4 center-align">Categories</h3>
+<h3 class="center-align list-header">My Lists</h3>
 <div class="row">
-    <div class="col s12 center-align">
-        <a href="{{ url_for('add_list') }}" class="btn-large light-blue darken-2">
-            Write your Christmas list <i class="fas fa-plus-square right"></i>
-        </a>
-    </div>
+  <div class="col s12 center-align">
+    <a href="{{ url_for('add_list') }}" class="btn-large green darken-2">
+      Write your Christmas list <i class="fas fa-plus-square right"></i>
+    </a>
+    <p><strong class="list-header">Press the <i class="material-icons fas fa-solid fa-plus"></i> on the cards below to
+        view the list!</strong></p>
+  </div>
 </div>
 
 <div class="row">
-    {% for list in current_user_lists %}
-    <div class="col s12 m6 l3">
-      <div class="card">
-        <div class="card-image">
-          <img src="https://t4.ftcdn.net/jpg/06/37/40/49/360_F_637404905_5Fl5lRTykkau999Bld5kGAuyAB8tRIzs.jpg">
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">+</i></a>
-        </div>
-        <div class="card-content">
-          <p><strong>{{ list.owner.username }}'s list</strong></p>
-        </div>
+  {% for list in current_user_lists %}
+  <div class="col s12 m6 l3">
+    <div class="card">
+      <div class="card-image">
+        <img src="https://t4.ftcdn.net/jpg/06/37/40/49/360_F_637404905_5Fl5lRTykkau999Bld5kGAuyAB8tRIzs.jpg">
+        <span class="card-title">{{ list.owner.username }}'s list</span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal-{{ list.id }}"><i
+            class="material-icons fas fa-solid fa-plus"></i></a>
+      </div>
+      <div class="card-content">
+        <p>{{ list.list_name }}</p>
       </div>
     </div>
-    {% endfor %}
   </div>
+
+  <!-- Modal Structure -->
+  <div id="modal-{{ list.id }}" class="modal">
+    <div class="modal-content">
+      <h4>{{ list.owner.username }}'s list</h4>
+      <p>List Name: {{ list.list_name }}</p>
+      <p>Due Date: {{ list.due_date.strftime('%B %d, %Y') }}</p>
+      <ul>
+        {% for item in list.user_christmas_list.split('\n') %}
+        <li>{{ item.strip() }}</li>
+        {% endfor %}
+      </ul>
+      <a href="" class="btn modal-close green darken-4">Edit</a>
+      <a href="" class="btn red">Delete</a>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
 
 
 {% endblock %}
