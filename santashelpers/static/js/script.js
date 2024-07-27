@@ -15,10 +15,11 @@ document.addEventListener("DOMContentLoaded", function() {
     M.FormSelect.init(selects);
   
     //modal
-    let deleteModal = document.querySelectorAll('.modal');
-    instances = M.Modal.init(deleteModal);
+    let Modal = document.querySelectorAll('.modal');
+    instances = M.Modal.init(Modal);
   
     // Collapsinle initialization
     let collapsibles = document.querySelectorAll('.collapsible');
     M.Collapsible.init(collapsibles); 
+
   });
