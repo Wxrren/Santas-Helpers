@@ -53,6 +53,18 @@ nav ul a {
 
 
 /*--------------------------------------------Footer*/
+
+div.container, a.right { 
+    color: #ffc107;
+    font-weight: 800;
+    text-shadow:
+    4px 0 black,
+    0 4px black,
+    -2px 0 black,
+    0 -2px black;
+    font-size: larger;
+}
+
 footer {
     background-image: url(https://thumbs.dreamstime.com/b/abstract-holiday-new-year-merry-christmas-border-transparent-background-vector-illustration-eps-130860708.jpg);
 }
@@ -127,4 +139,15 @@ strong.list-header {
     0 -2px black;
     font-weight: 900;
     font-size: 25px;
+}
+
+h4.center-align.list-header {
+    color: #ffc107;
+    text-shadow:
+    2px 0 black,
+    0 2px black,
+    -2px 0 black,
+    0 -2px black;
+    font-weight: 600;
+    font-size: 35px;
 }
