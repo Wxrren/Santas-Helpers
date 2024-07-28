@@ -74,7 +74,9 @@ def sign_in():
 
 @app.route("/mainpage", methods=["GET", "POST"])
 def mainpage():
-    return render_template("index.html")
+
+    all_lists = Christmas_lists.query.all()
+    return render_template("index.html", all_lists=all_lists)
 
 
 @app.route("/my_list", methods=["GET", "POST"])
@@ -160,3 +162,22 @@ def edit_list(list_id):
 
     
     return render_template("edit_list.html", list=edit_user_list)
+
+@app.route("/delete_list/<int:list_id>")
+def delete_list(list_id):
+    delete_user_list = Christmas_lists.query.get_or_404(list_id)
+
+    if delete_user_list.owner_id != session['user_id']:
+        flash('You do not have permission to delete this list.', 'warning')
+        return redirect(url_for('my_list'))
+
+    db.session.delete(delete_user_list)
+    db.session.commit()
+    return redirect(url_for("my_list"))
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    all_lists = Christmas_lists.query.all()
+
+    return render_template("my_list.html", all_lists=all_lists)
