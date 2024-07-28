@@ -176,8 +176,17 @@ def delete_list(list_id):
     return redirect(url_for("my_list"))
 
 
-@app.route("/search", methods=["GET", "POST"])
+@app.route("/search", methods=["GET"])
 def search():
-    all_lists = Christmas_lists.query.all()
-
-    return render_template("my_list.html", all_lists=all_lists)
+    search_user = request.args.get('search', '').lower() 
+    
+    users = Activeuser.query.filter(Activeuser.username.ilike(f'%{search_user}%')).all()
+   
+    user_lists = []
+    for user in users:
+        user_lists.extend(user.christmas_lists)
+    
+    if not search_user:
+        return render_template("search.html", all_lists=[])
+        
+    return render_template("search.html", all_lists=user_lists)
