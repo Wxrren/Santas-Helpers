@@ -34,8 +34,8 @@
                         {% else %}
                             <li><a href="{{ url_for('home') }}">Home</a></li>
                         {% endif %}
-                        <li><a href="">New Task</a></li>
-                        <li><a href="">Categories</a></li>
+                        <li><a href="{{ url_for('my_list') }}">My List</a></li>
+                        <li><a href="{{ url_for('search') }}">Search</a></li>
                     </ul>
                 </div>
             </nav>
