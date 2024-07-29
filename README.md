@@ -156,7 +156,18 @@ For the background I chose a white page with an image of christmas trees that ma
 
 ### Typography
 
-* For the fonts I worked with the fonts on materialise - These fonts are -apple-system, BlinkMacSystemFont ,"Segoe UI", Roboto ,Oxygen-Sans ,Ubuntu,Cantarell ,"Helvetica Neue", sans-serif. This covers a range of devices such as iOS, windows, android ETC.
+* For the fonts I worked with the fonts on materialise - These fonts are:
+  * -apple-system
+  * BlinkMacSystemFont
+  * "Segoe UI"
+  * Roboto
+  * Oxygen-Sans
+  * Ubuntu
+  * Cantarell
+  * "Helvetica Neue"
+  * sans-serif. 
+  
+This covers a range of devices such as iOS, windows, android ETC.
 
 I changed the font weight, to make it bolder and more readable. The result was a text that looked fitting for a kids christmas themed website.
 
@@ -171,66 +182,73 @@ I created my wireframes using balsamiq wireframes. I found this simple and effec
 
 ### Existing Features
 
-#### Dark Mode Toggle
+#### Landing Page
 
-![Dark mode toggle shown by a moon and text](assets/images/dark-mode-toggle-feature.png "Dark mode toggle")
+![Landing page for site.](santashelpers/static/images/landing-page.png "Landing page")
+
+* First thing you see as you open the site.
+* Gives the user an idea of what the site will be like when they register with the reveal + symbol that shows a christmas list.
+* Register and sign in buttons front and center so that users can get into the action quickly.
 
 
-* The toggle is fixed to the top right of the page at all times.
-* Once clicked the background will turn black and cards will change to a pink and green colour, text will turn white and buttons will turn green. 
-* On light mode the logo is a moon. In dark mode the logo is a sun.
-* Text changes from "Dark mode" to "Light mode" when toggled between.
-* Easily accessible for the user, can be toggled at anytime.
+#### View every user's list
 
-#### Main Feature - Card game
+![An image showing every user's list.](santashelpers/static/images/mainpage.png "Main page")
 
-![An image showing the main feature of the website.](assets/images/website-lightmode.png "Main website")
+* Operates as the main homepage showing every user's list. The idea is to help potentially give people inspiration for their own lists.
+* Each card has a modal that pops up revealing their list for all users to see.
+* An edit and delete button so users can edit or delete their lists. This can only be done for their own lists so the buttons will not show on other users lists.
+* Each list reveals the username of the user who created it and the title they chose to give the list.
 
-* Main game, when pressing play a modal will pop up wishing the player luck and letting them know to hit next turn after selecting 3 cards.
-* Each card has an array of 9 images which will be called at random when the card is selected.
-* The play button will change to "Next turn!" after the first attempt is made.
-* Matches counter will count as each card selected matches the previous card. This is done by running 2 loops and checking if the card from the inner loop matches the card from the outer loop.
-* Each time 3 cards are selected the game will automatically refresh the page. Progress is saved in local storage so when the page refreshed it increments how many attempts have been taken so far.
-* If more than 5 attempts are taken a modal wil a game over screen will pop up promting you to restart as seen below.
 
-![An image showing the game over screen](assets/images/restart-modal-feature.png "game over")
+#### My lists
+![An image showing the users lists and a create list button](santashelpers/static/images/my_lists.png "My lists")
 
-#### Email API
-![An image showing an email response](assets/images/email-query-feature.png "query")
-![An image showing an email response](assets/images/email-win-feature.png "comgratulations")
-* An automatic response email that would confirm to users they will have their query responded to. It also provides a contact number to escalate. This email will be received when the form within the "Contact us" modal form seen below is completed. The data taken from user input is passed into the email API. This is done by creating a global variable for contact form data and defining it within each mail function.
-![An image showing a form requesting an email and query](assets/images/contact-us-modal-feature.png "query form")
-* The email win feature is set up the same way as above. When a user selected 3 cards and matches 3 in a row a game winning modal will pop up requesting their name and email address. From here an email will be sent confirming the prize and how to claim.
-![An image showing a form requesting an email and query](assets/images/game-winner-modal-feature.png "winner form")
+* Displays all lists made by the user.
+* Option to edit or delete their lists.
+* Button to add their own lists. From here users are redirected to a form they complete their christmas list on and then submit it to the website. This is seen below here:
+![An image showing the create list form](santashelpers/static/images/add-list.png "Add List")
 
-#### Rules modal
-![An image showing a pop up displaying the rules](assets/images/rules-modal-feature.png "rules")
-* A simple modal that pops up when the button is clicked.
-* Displays the rules to the player before they close it to get started on playing the game.
+#### Edit Page
+![An edit page](santashelpers/static/images/edit-page.png "Edit")
+* Displays's previous lists answers to be edited
+* Pops
+![An edit page](santashelpers/static/images/edit-modal.png "Edit")
+
+
+#### Delete Button
+![A delete button](santashelpers/static/images/delete-modal.png "Delete")
+* Delete button to easily allow users to discard current or old lists
+* Modal pops up to avoid accidentally clicking the delete button and losing the list. 
+
+#### Search Bar
+![A search bar](santashelpers/static/images/search-bar.png "Search")
+* Allows user's to easily search for other usernames and bring up their lists.
+* No user's shown until name is written. One name is searched their lists appear.
+![A search bar](santashelpers/static/images/search-bar-result.png "Search")
 
 ## Features Left to Implement
 
-* Payment
+* Friends and interactivity
    
-    * To go more with the gambling sort of nature of the game I would like to make the first 5 attempts free to play and make it so that upon game loss users would have to pay to enter again and get another 5 attempts.
+    * To build a community and allow familys to connect with eachother and share their lists I would like to have given users the option to add other users as a friend. I would also have liked to allow them to interact with list by liking them.
 
-* Different Themes
+* Letter to santa
 
-    * I would like to create a few pages with similar games but different themes, maybe a western theme with desert like colours and cowboy images. Different themes to make it more intersting and appealing to users.
+    * I would like to allow user's to have a personalised response in a letter from santa based on the responses they put in their lists.
 
-* Different games
-    * I would like the option to add different game modes of things like guess the box. You would see the prize enter the box and the boxes would then quickly moves around the screen, you would have 3 attempts to select the correct box. 
+* Super user
+    * I would like a user to be a moderator of the website. This feature would include another page bringing up a list of users on the website. They can either time out or ban users if innapropriate content is posted.
 
     ## Bugs
 
 | Problem         | Action           | Status  |
 | ------------------------------------------------|:--------------------------------------:| -----:|
-| Modals within if statements for win/loss conditions not pop up.| Global variables getting the id's of the modal created allowing them to be accessed withing any function. From here I selected a classlist with a class made on CSS but not in the HTML tags allowing it to only be open on meeting the condition and selecting the correct class.| Fixed |
-|  Conditional modals not closing using the buttons and onclick function in the HTML tags. | Within the if statement that selects the modal create another if statement checking that variable's class list contains the same one that's used to open the modal. If it does it will select the close modal class made in CSS and make an onclick event listener so that when the close button is selected it will apply the "close" class removing modal from the screen     |   Fixed |
-| Email API not sending user input details.| When set emails with names and texts manually written with strings the emails would send, however, in order for users to receive emails directly to them I needed to connect the form contact values but this would not work or send emails to users. In order to fix this I had to create a global variable. I then passed an argument called "contactForm" into the send email function and within the function created an object containing the name and email address from the contact form where the users data was collected from the form inputs. This would allow email JS to send an email to the user directly with my created template. |    Fixed |
-| Cards still flipping even when 3 cards are selected.| With a simple if statement if the selected cards length are >=3 I put "return;" to make the function exit early and stop other cards being selected.     |    Fixed |
-Cards still counting as attempts when more than 3 cards are selected.| Similar to previous fix. If the selected cards length are >=3 I put "return;" to make the function exit early and stop other cards being selected and stop it from tracking as more than one attempt.    |    Fixed |
-Page refreshing instantly on 3rd card selection before users can see thier cards.| Used javascript "setTime()" function to create a timer delay before the page is refreshed.    |    Fixed |
+| Forms not posting to the Database.| Intial "User" class was not allowing itself to be added to database or deleted in anyway. Created a new model table called Activeuser. This allowed forms to post and user details to be saved to the database/session| Fixed |
+|  Issue with nav home button taking you back to register page when pressing home button.| Home button was connected to the landing page. I wanted it to redirect to this page when not signed in but the main page when signed in. Created an if statement that checked if the username was in session. If it was it takes you to the main page and if you are not signed in you get redirected to the landing page. I also applied this if statement to the brand logo.    |   Fixed |
+| Relationship not correctly setup. | Issue with the relationships being setup incorrecly so that the db was requiring the user's ID to be filled in when submitting a form. Removed all databases from PSQL and then corrected the usermodels to reflect  the lists and folders in Activeuser model so set the relationship and tie the user to the lists.|    Fixed |
+| Forms not posting to DB.| Route incorrectly setup. Checked if method -- post. From here I then created variables retrieving the form data. From here I applied them to a new instance under a new variable. I then commited that variable to the session and the form posted to the database.    |    Fixed |
+Multiple users being displayed instead of just the user that created the list. .| Ran a check to see if user is in session. If they are, I created a variable that checks the session. This then checks if the owner ID of the form mathces the user ID that's in session. If it does the site will display the users username on the list instead of a loop running every username|    Fixed |
 
 ## Testing
 
@@ -239,59 +257,57 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 * [W3C Markup Validator:](https://validator.w3.org/)
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 * [JSHint](http://jshint.com/)
+* [python](https://pep8ci.herokuapp.com)
 
 ### Validation Results
 
 <details>
-<summary>index Page</summary>
+<summary>HTML</summary>
 
-![HTML checker showing no errors on the index page.](assets/images/html-validator.png "index")
+![HTML checker showing no errors on the index page.](santashelpers/static/images/html-validator.png "index")
 
 </details>
 
 <details>
 <summary>CSS</summary>
 
-![HTML checker showing no errors on the CSS Stylesheet.](assets/images/css-validator.png "CSS")
+![CSS checker showing no errors on the CSS Stylesheet.](santashelpers/static/images/css-validator.png "CSS")
 
 </details>
 
 <details>
 <summary>Javascript</summary>
 
-![HTML checker showing no errors on the javascript Stylesheet.](assets/images/javascript-validation.png "Javascript")
+![Javascript checker showing no errors on the javascript Stylesheet.](santashelpers/static/images/jasvascript%20validator.png "Javascript")
 * NOTE: jshint shows undefinined variables and unused variables. These variables are actually functions that are being called elsewhere. It is also an email.js API file that jshint is not recognising. Other than this, no other errors are present.
 
 </details>
 
 <details>
-<summary>Javascript hover file</summary>
+<summary>Python Models</summary>
 
-![HTML checker showing no errors on the javascript Stylesheet.](assets/images/javascript-hover-validation.png "Javascript")
-* NOTE: jshint shows undefinined variables and unused variables. These variables are actually functions that are being called elsewhere. It is also an email.js API file that jshint is not recognising. Other than this, no other errors are present.
-
-</details>
-
-<details>
-<summary>Javascript contact modal file</summary>
-
-![HTML checker showing no errors on the javascript Stylesheet.](assets/images/javascript-contact-modal-validation.png "Javascript")
-* NOTE: jshint shows undefinined variables and unused variables. These variables are actually functions that are being called elsewhere. It is also an email.js API file that jshint is not recognising. Other than this, no other errors are present.
+![Python checker showing no errors on the Python Stylesheet.](/santashelpers/static/images/python-validators-models.png "Python")
 
 </details>
 
 <details>
-<summary>Javascript rules modal file</summary>
+<summary>Python Routes</summary>
 
-![HTML checker showing no errors on the javascript Stylesheet.](assets/images/javascript-rules-modal-validation.png"Javascript")
-* NOTE: jshint shows undefinined variables and unused variables. These variables are actually functions that are being called elsewhere. It is also an email.js API file that jshint is not recognising. Other than this, no other errors are present.
+![Python checker showing no errors on the Python Stylesheet.](/santashelpers/static/images/python-validators-route.png "Python")
 
 </details>
 
 <details>
-<summary>Javascript dark mode file</summary>
+<summary>Python run</summary>
 
-![HTML checker showing no errors on the javascript Stylesheet.](assets/images/javascript-toggle-validation.png "Javascript")
+![Python checker showing no errors on the Python Stylesheet.](/santashelpers/static/images/python-validators-run.png "Python")
+
+</details>
+
+<details>
+<summary>Python init</summary>
+
+![Python checker showing no errors on the Python Stylesheet.](/santashelpers/static/images/python-validators-init.png "Python")
 
 </details>
 
@@ -307,18 +323,14 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 
 | Test        | Status           | 
 | ------------- |:-------------:| 
-| Emails to user send following input details.      | Pass | 
-| Mobile and tablet versions of the game are responsive and work exactly as the desktop version works.    | Pass      |
-| Modals pop up on screen when buttons are pressed or conditions such as starting the game, losing game and winning the game are met | Pass      |
+| User Registration posts to Database      | Pass | 
+| User is able to sign in with the details input in the registration form   | Pass      |
+| Modals pop up on screen when buttons are pressed or conditions such as editing or deleting lists | Pass      |
 | Site works correctly on Android mobile device. | Pass      |
 | Site works correctly on Apple mobile device. | Pass      |
 | Site works correctly on Apple tablet device. | Pass      |
-| Dark mode toggles to a black background with different colour cards and then back to light mode when toggled again | Pass      |
-| Page refreshes and correctly counts each attempt made| Pass      |
-| Matches are correctly counted and winning by getting 3 is possible  | Pass      |
-| Cards can only be selected a maximum of 3 times and it doesn't increase as further attempts if you try to select more | Pass      |
-Page refreshed 0.5 miliseconds after 3 cards are selected | Pass      |
-Hover functions work as intended for buttons and toggles| Pass      |
+| Users can view, created, update and delete forms| Pass      |
+| Users can search for other users regardless of capital letters | Pass      |
 
 --- 
 
@@ -329,7 +341,7 @@ Hover functions work as intended for buttons and toggles| Pass      |
 <details>
 <summary>Home Page</summary>
 
-![Lighthouse scores for index page on mobile.](assets/images/lighthouse-validation-mobile.png "Index mobile")
+![Lighthouse scores for index page on mobile.](santashelpers/static/images/lighthouse%20mobile.png "Index mobile")
 
 </details>
 
@@ -338,7 +350,7 @@ Hover functions work as intended for buttons and toggles| Pass      |
 <details>
 <summary>Home Page</summary>
 
-![Lighthouse scores for index page on mobile.](assets/images/lighthouse-validation-desktop.png "Index desktop")
+![Lighthouse scores for index page on Desktop.](santashelpers/static/images/lighthouse%20desktop.png "Index desktop")
 
 </details>
 
@@ -347,6 +359,10 @@ Hover functions work as intended for buttons and toggles| Pass      |
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
 * [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+* [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)
+
+
 
 ## Frameworks, Libraries & Programs Used
 
@@ -370,6 +386,9 @@ Hover functions work as intended for buttons and toggles| Pass      |
 
 * [Am I Responsive](https://ui.dev/amiresponsive)
     * Mock picture for README file.
+
+* [Materialize](https://materializecss.com/typography.html)
+    * Used for making web development faster. My usage was for card columns + forms
 
 ## Deployment and local Development.
 
