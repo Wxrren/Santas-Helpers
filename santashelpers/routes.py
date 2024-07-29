@@ -64,8 +64,8 @@ def sign_in():
             # success
             session['username'] = username
             session['user_id'] = existing_site_user.id
+            
             flash('You have successfully signed in!', 'success')
-            print(session)
             return redirect(url_for('mainpage'))
         else:
             flash("Oh no! The north pole doesn't recognise the username or password. Try Again.", 'error')
