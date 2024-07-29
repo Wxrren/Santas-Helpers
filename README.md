@@ -82,56 +82,91 @@ When designing this website I intended to have a very minimal design that didn't
 
 I chose to keep simple and clean pages and make usage of modals for viewing lists to stop users having to go back and forth to different pages for user's lists and also for deleting lists to make sure accidental deletion doesn't happen.
 
-### Home Page - Wireframe for Desktop, Tablet and Mobile.
-![An images showing the website wireframes across different devices](assets/images/wireframes/wireframes-all-devices.pngwireframes-all-devices.png "Home Page Wireframe")
+### Wireframe for Desktop, Tablet and Mobile.
 
-* Mobile
 
-For the "Rules" and "Contact" button I chose to put these at the top of the page due to limited space on the sides. I want the card game to be the main focus. Modals will pop up in front of the fact game in the middle of the screen.
+<details>
+<summary>Landing Page Wireframe.</summary>
+
+![Landing page for website.](santashelpers/static/images/wireframe-landing-page.png "Landing Page")
+
+</details>
+
+<details>
+<summary>Registration page Wireframe.</summary>
+
+![Registration page for website.](santashelpers/static/images/wireframe-register-page.png "Registration page")
+
+</details>
+
+<details>
+<summary>Sign in page Wireframe.</summary>
+
+![Sign in page for website.](santashelpers/static/images/wireframe-sign-in-page.png "Sign in page")
+
+</details>
+
+<details>
+<summary>Main page Wireframe.</summary>
+
+![Main page for website.](santashelpers/static/images/wireframe-main-page.png "Main page")
+
+</details>
+
+<details>
+<summary>My lists page Wireframe.</summary>
+
+![My lists page for website.](santashelpers/static/images/wireframe-my_lists-page.png "My lists page")
+
+</details>
+
+<details>
+<summary>Add/edit list page Wireframe.</summary>
+
+![add/edit list page for website.](santashelpers/static/images/wireframe-add-and-edit-list-page.png "add/edit list page")
+
+</details>
+
+<details>
+<summary>Delete modal Wireframe.</summary>
+
+![Delete modal for website.](santashelpers/static/images/wireframe-delete-modal.png "Delete modal page")
+
+</details>
+
+<details>
+<summary>Search Page Wireframe.</summary>
+
+![Search Page for website.](santashelpers/static/images/wireframe-search-page.png "Search page")
+
+</details>
+
 
 ## Design
 
 ### Colour
 
-The colour scheme I wanted for the website was simple and clean. I chose colours to try and follow the 10 commandments of colour and complement the colors see on the site.
+The colour scheme I wanted for the website kept the theme of simple and clean. I also wanted to continue the christmas theme so I chose a series of red's, green's and amber yellow's. I used images for the navbar and footer of a christmas wreath containing those colours and a amber yellow text so that it looks like christmas lights.
 
-For the background of lightmode I chose a simple blue as it felt calm and inviting and for darkmode it was a simple black. The card colours change depending on if it's lightmode or darkmode. For lightmode I chose a lightblue and orange to go together. In darkmode I chose green and pink. Both of these show across from eachother on the colourwheel.
-
-### Website lightmode and darkmode
-
-
-* Light mode
-    ![An image a website with a blue background, light blue buttons and blue and orange cards](assets/images/website-lightmode.png "lightmode Colours")
-    
-
-* Dark mode
-
-![An image showing a black colourwith hex and RGB codes](assets/images/website-darkmode.png "darkmode colours") 
-
+For the background I chose a white page with an image of christmas trees that maintain the 3 core colours.
 
 * Main colours used on the website:
-    * Background colour: rgba(6, 115, 255, 1) - This was chosen as a nice cool and inviting background that didn't take too much away from the main card game. 
-    * Modals and button colours: #add8e6, #008000,  - This was to keep with the theme of simple and easy to read colours which matches the light mode and dark mode colours of the cards to keep a simple theme.
-    * Dark mode modal button color: #0d6efd - The above colour in darkmode was not very readable with plain white text. I wanted the text to be as regimented as possible so changed the colours.
-    * Light mode card colours: rgba(85, 213, 255, 0.8) + rgba(255, 94, 6, 0.8) - These were chosen in an effort to follow the ten commandments of colour. They are across from eachother on the colour wheel and both compliment eachother making the cards look more enticing.
-    * Dark mode card colours: rgba(92, 255, 85, 0.8) + rgba(246, 3, 221, 0.8). Similar to lightmode these compliment eachother on the colour wheel and are aimed to make the cards look more attractive to players.
-    * Game winning Modal: rgba(1, 1, 44, 1) + rgba(9, 9, 121, 1) + rgba(255, 0, 0, 1) - I wanted the winning modal to stand out as a celebratory message. For this modal only I chose to break the colour rule and reused the colours from my first project. This was done as a small little reference for my past work.
+    * Text Colour: #ffc107 - This was chosen as a nice standout colour from the greens and reds. I also aimed for it to look like christmas lights among the wreath.. 
+    * Modals and button colours: #f44336, #1b5e20,  - This was to keep with the theme of christmas. It also helped represent postive or negative actions such a green for edit and red for delete.
 
 ### Typography
 
-* Lexend
-    * I chose Lexend from Google Fonts as I felt it kept well enough with the theme of being clear and readable. I wanted all buttons and modals to be as easy to read as possible.
+* For the fonts I worked with the fonts on materialise - These fonts are -apple-system, BlinkMacSystemFont ,"Segoe UI", Roboto ,Oxygen-Sans ,Ubuntu,Cantarell ,"Helvetica Neue", sans-serif. This covers a range of devices such as iOS, windows, android ETC.
 
-* Bebas Neue
-    * For the dark/light mode toggles I wanted text next to the moon labels to make it as clear as possible what they would do. I chose this font from Google Fonts as it was an easy regimented bold font that stoof out from the rest of the text used elsewhere.
+I changed the font weight, to make it bolder and more readable. The result was a text that looked fitting for a kids christmas themed website.
 
 ### WireFrames
 
 I created my wireframes using balsamiq wireframes. I found this simple and effective for assessing the sites appearance as it had a variety of ready available tools representing different parts of a website so I was able to design it how I envisioned it.
 
 ## Features
-* This website is a simple to use card game.
-* Users can select the 3 cards to match and after 5 attempts can restart the game to try again.
+* View other peoples christmas lists.
+* Create, view, edit and delete christmas lists of your own
 * Responsive on all device sizes.
 
 ### Existing Features
