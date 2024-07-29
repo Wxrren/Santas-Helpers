@@ -47,17 +47,16 @@ Users can also use the search function to find the lists made by certain users b
 
 ## User Experience (UX)
 
-There is a clear navigation in the nav bar which directs you on where to join the league or sign up to competitions. It directs you to a tournaments gallery Where pictures of tournaments others have competed in can be viewed.
+There is a clear navigation in the nav bar which directs you on where to view your individual lists where you can also create your own lists. Then navbar also clearly directs you to the search function where you can search for individual users.
 
-The website is a simple single page that makes use of modals instead of diverting to other pages. When selecting the modals users can either check the rules, submit a query/complaint and enter their email details should they win the game.
-
-Users can also switch between light and dark mode by selecting the moon logo on the top right corner. 
+The website is designed to be simple so that ypung children can use it to make their christmas lists. For this reason I kept the pages plane with content central of the screen. User's card's appear in the middle of the screen with flashing + icons and instructions on the top of the page indicating to click the + to view the list. The edit and delete buttons are attached to the cards to make it easier.
 
 To make the user experience easy - I wanted the site to have:
 
-* A simple call to action in the form of the "Play!" button which also turns to a "Next Turn" button after the 1st attempts are made.
-* A simple UI. I wanted minimal buttons appearing on the screen to make it less cluttered focussing only on what they need to play the game or ask any questions.
-* Fast game that's responsive to user actions.
+* A simple and easy registration and sign up form.
+* A simple nav bar for children to get around the site easily.
+* A simple UI. I wanted minimal buttons appearing on the screen to make it less cluttered focussing only on what they need to view lists or make their own.
+
 
 ## User Stories
 To determine which approach to take with site features I determined the goals of different users from first time through to frequent users.
@@ -65,13 +64,13 @@ To determine which approach to take with site features I determined the goals of
 ### User
 
 * First time User Goals
-    * As a user I want to understand the main purpose of the site and get straight into the game.
-    * As a user I want to understand the rules of how I can play the game.
+    * As a user I want to understand the main purpose of the site immediately and have a fast way to get involved.
+    * As a user I want to understand how I can create lists or view other peoples easily.
     * As a user I want to be able to easily navigate the site.
     
 * Returning User Goals
-    * As a user I want to be get straight into the action with playing
-    * As a user I want to be able to easily contact and provide feedback if something goes wrong.
+    * As a user I want to be get straight into the action and sign in easily.
+    * As a user I want to be able to easily edit my lists or delete old ones.
     
 * Frequent User Goals
     * As a user I want to be able to get started quickly
@@ -79,9 +78,9 @@ To determine which approach to take with site features I determined the goals of
 
 ## Wire Frames
 
-When designing this website I intended to have a very minimal design that didn't distract from the card game. The design was intended to look the same across all devices.
+When designing this website I intended to have a very minimal design that didn't distract from the main purpose.
 
-I chose to keep one simple page and make usage of modals for anything else needed
+I chose to keep simple and clean pages and make usage of modals for viewing lists to stop users having to go back and forth to different pages for user's lists and also for deleting lists to make sure accidental deletion doesn't happen.
 
 ### Home Page - Wireframe for Desktop, Tablet and Mobile.
 ![An images showing the website wireframes across different devices](assets/images/wireframes/wireframes-all-devices.pngwireframes-all-devices.png "Home Page Wireframe")
