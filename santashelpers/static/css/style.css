@@ -27,20 +27,20 @@ nav {
 .brand-logo {
     font-weight: 800;
     text-shadow:
-    4px 0 black,
-    0 4px black,
-    -2px 0 black,
-    0 -2px black;
+        4px 0 black,
+        0 4px black,
+        -2px 0 black,
+        0 -2px black;
 }
 
 nav ul a {
     color: #ffc107;
     font-weight: 800;
     text-shadow:
-    4px 0 black,
-    0 4px black,
-    -2px 0 black,
-    0 -2px black;
+        4px 0 black,
+        0 4px black,
+        -2px 0 black,
+        0 -2px black;
     font-size: larger;
 }
 
@@ -54,14 +54,15 @@ nav ul a {
 
 /*--------------------------------------------Footer*/
 
-div.container, a.right { 
+div.container,
+a.right {
     color: #ffc107;
     font-weight: 800;
     text-shadow:
-    4px 0 black,
-    0 4px black,
-    -2px 0 black,
-    0 -2px black;
+        4px 0 black,
+        0 4px black,
+        -2px 0 black,
+        0 -2px black;
     font-size: larger;
 }
 
@@ -78,10 +79,10 @@ div.modal-content {
     color: black;
     font-weight: 200;
     text-shadow:
-    -1px 0 black, 
-    0 1px black, 
-    1px 0 black, 
-    0 -1px black;
+        -1px 0 black,
+        0 1px black,
+        1px 0 black,
+        0 -1px black;
     font-size: 20px;
 }
 
@@ -98,10 +99,10 @@ div.modal-footer {
 a.modal-close.waves-effect.waves-green.btn-flat {
     color: #ffc107;
     text-shadow:
-    1px 0 black,
-    0 2px black,
-    -1px 0 black,
-    0 -2px black;
+        1px 0 black,
+        0 2px black,
+        -1px 0 black,
+        0 -2px black;
     font-weight: 800;
     font-size: 30px;
 }
@@ -111,21 +112,21 @@ a.modal-close.waves-effect.waves-green.btn-flat {
 h3.center-align.list-header {
     color: #ffc107;
     text-shadow:
-    2px 0 black,
-    0 2px black,
-    -2px 0 black,
-    0 -2px black;
+        2px 0 black,
+        0 2px black,
+        -2px 0 black,
+        0 -2px black;
     font-weight: 800;
     font-size: 50px;
 }
 
-.card .card-image .card-title  {
+.card .card-image .card-title {
     color: #ffc107;
     text-shadow:
-    2px 0 black,
-    0 2px black,
-    -2px 0 black,
-    0 -2px black;
+        2px 0 black,
+        0 2px black,
+        -2px 0 black,
+        0 -2px black;
     font-weight: 800;
     font-size: 30px;
 }
@@ -133,10 +134,10 @@ h3.center-align.list-header {
 strong.list-header {
     color: #ffc107;
     text-shadow:
-    1px 0 black,
-    0 2px black,
-    -1px 0 black,
-    0 -2px black;
+        1px 0 black,
+        0 2px black,
+        -1px 0 black,
+        0 -2px black;
     font-weight: 900;
     font-size: 25px;
 }
@@ -144,10 +145,82 @@ strong.list-header {
 h4.center-align.list-header {
     color: #ffc107;
     text-shadow:
-    2px 0 black,
-    0 2px black,
-    -2px 0 black,
-    0 -2px black;
+        2px 0 black,
+        0 2px black,
+        -2px 0 black,
+        0 -2px black;
     font-weight: 600;
     font-size: 35px;
+}
+
+/*--------------------------------------------Media Queries*/
+@media only screen and (min-width: 320px) and (max-width: 400px) {
+
+    /*--------------------------------------------Nav*/
+    a.brand-logo.amber-text {
+        font-weight: 600;
+        font-size: 21px;
+    }
+
+    /*--------------------------------------------mainpaage*/
+    h3.center-align.list-header {
+        font-weight: 600;
+        font-size: 35px;
+    }
+
+}
+
+@media only screen and (min-width: 401px) and (max-width: 407px) {
+    a.brand-logo.amber-text {
+        font-weight: 600;
+        font-size: 21px;
+    }
+}
+
+@media only screen and (min-width: 407px) and (max-width: 452px) {
+
+    /*--------------------------------------------Nav*/
+    a.brand-logo.amber-text {
+        font-weight: 600;
+        font-size: 28px;
+    }
+
+    /*--------------------------------------------mainpaage*/
+    h3.center-align.list-header {
+        font-weight: 600;
+        font-size: 35px;
+    }
+}
+
+@media only screen and (min-width: 453px) and (max-width: 465px) {
+
+    /*--------------------------------------------Nav*/
+    a.brand-logo.amber-text {
+        font-weight: 600;
+        font-size: 28px;
+    }
+
+    /*--------------------------------------------mainpaage*/
+    h3.center-align.list-header {
+        font-weight: 600;
+        font-size: 35px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    /*--------------------------------------------mainpaage*/
+
+    .card .card-image .card-title {
+        font-weight: 800;
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1400px) {
+    /*--------------------------------------------mainpaage*/
+
+    .card .card-image .card-title {
+        font-weight: 800;
+        font-size: 20px;
+    }
 }
