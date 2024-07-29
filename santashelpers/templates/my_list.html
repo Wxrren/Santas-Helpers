@@ -20,8 +20,8 @@
       <div class="card-image">
         <img src="https://t4.ftcdn.net/jpg/06/37/40/49/360_F_637404905_5Fl5lRTykkau999Bld5kGAuyAB8tRIzs.jpg">
         <span class="card-title">{{ list.owner.username }}'s list</span>
-        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger pulse" href="#modal-{{ list.id }}"><i
-            class="material-icons fas fa-solid fa-plus"></i></a>
+        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger pulse"
+          href="#modal-{{ list.id }}"><i class="material-icons fas fa-solid fa-plus"></i></a>
       </div>
       <div class="card-content">
         <p>{{ list.list_name }}</p>
@@ -62,7 +62,7 @@
       <a href="{{ url_for('my_list') }}" class="btn modal-close green accent-4">Cancel</a>
     </div>
   </div>
-{% endfor %}
+  {% endfor %}
 </div>
 
 
