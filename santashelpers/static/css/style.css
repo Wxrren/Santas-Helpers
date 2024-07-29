@@ -51,6 +51,21 @@ nav ul a {
     margin-top: 0px;
 }
 
+div.card-reveal {
+    background-image: url(https://pics.craiyon.com/2023-10-08/2a6772ad003a49428d61e31b24dc3927.webp);
+    background-size: cover, contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffc107;
+    font-weight: 800;
+    text-shadow:
+        4px 0 black,
+        0 4px black,
+        -2px 0 black,
+        0 -2px black;
+        font-size: 50px;
+}
+
 
 /*--------------------------------------------Footer*/
 
