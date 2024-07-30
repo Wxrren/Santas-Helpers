@@ -392,51 +392,79 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 
 ## Deployment and local Development.
 
-*  ### GitHub Pages
+### Relational Database Management System
 
-I used GitHub to deploy the live version of the website. To do this I had to: 
+This project uses [PostgreSQL](https://www.postgresql.org) for the relationable database management system.
 
-1.  Log in to GitHub and locate the GitHub win a car [Repository](https://github.com/Wxrren/win-a-car)
+* To obtain your database to apply online first you had to go to [PostgreSQL](https://dbs.ci.net)
+* Enter your email address and hit submit. From here your database will be created and emailed to you.
+
+### Heroku
+
+This project uses Heroku to build, run, and operate applications entirely in the cloud.
+
+To achieve this you have to:
+
+* Generate the requirements.txt file with the following command in the terminal. After you run this command a new file called requirements.txt should appear in your root directory.
+![Lighthouse scores for index page on Desktop.](santashelpers/static/images/requirements.png "Index desktop")
+
+* Heroku requires a Procfile containing a command to run your program. Inside the root directory of your project create the new file. It must be called Procfile with a capital P, otherwise Heroku won’t recognise it. Inside the file, add the following command
+
+![Lighthouse scores for index page on Desktop.](santashelpers/static/images/procfile-image.png "Index desktop")
+
+* To ensure that SQLAlchemy can also read our external database, its URL needs to start with “postgresql://”, but we should not change this in the environment variable. Instead, we’ll make an addition to our else statement from the previous step to adjust our DATABASE_URL in case it starts with postgres://:
+
+![An image showing the repository page with settings highlighted.](/santashelpers/static/images/db-for-loop.png "Settings")
+
+*  ### Heroku Deployment
+
+I used heroku to deploy the live site database. To do this I had to:
+
+* Log into Heroku.com and click “New” and then “Create a new app”
+* Choose a unique name for your app, select the region closest to you and click “Create app”
+* Go to the Settings tab of your new app and click reveal config vars.
+* Add each of your other environment variables except DEVELOPMENT and DB_URL from the env.py file as a Config Var. The result should look something like this:
+
+![An image showing the repository page with settings highlighted.](santashelpers/static/images/config%20vars.png "Settings")
+* Login to github, earch for your repo and click Connect.
+* Now, we have our project in place, It's tiome to take place adding tables to the database. Hit more then run console.
+
+![An image showing the repository page with settings highlighted.](santashelpers/static/images/run-console.png "Settings")
+* Type python3 into the console and click Run
+* once loaded type:  from santashelpers import db to imports our database. 
+Once this loads type: - db.create_all().
+
+
+### Github 
+
+1.  Log in to GitHub and locate the GitHub santashelpers [Repository](https://github.com/Wxrren/Santas-Helpers)
 2.  Locate the "Settings" button at the top of the repository as shown here:
 
-![An image showing the repository page with settings highlighted.](assets/images/repository-settings-location.png "Settings")
+This project can be cloned or forked in order to make a local copy on your own system.
 
-3. look down the "Code and automation" area until you find ["Pages"](https://github.com/Wxrren/win-a-car/settings/pages) as shown below:
+For either method, you will need to install any applicable packages found within the requirements.txt file.
 
-![An image showing the repository page with pages highlighted.](assets/images/site-link-github-pages.png "Pages")
+pip3 install -r requirements.txt.
 
-4. Under "Source", click the dropdown menu "None" and select "Main" and click "Save".
+#### How to Fork
+Make a copy of the original [Repository](https://github.com/Wxrren/Santas-Helpers) on my GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
 
-5. The page will automatically refresh.
+* Log in to GitHub and locate the GitHub Repository
+* At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+* Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
-6. Scroll back to locate the now-published [site link](https://wxrren.github.io/win-a-car/) in the "GitHub Pages" section as seen below:
+#### How to Clone
 
-![An image showing the repository page with pages highlighted.](assets/images/site-link-github-pages.png "Site Link")
+You can clone the repository by following these steps:
 
-* ### Forking the GitHub Repository
+* Go to the GitHub [Repository](https://github.com/Wxrren/Santas-Helpers)
+* Locate the Code button above the list of files and click it
+* Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
+* Open Git shell or Terminal
+* Change the current working directory to the one where you want the cloned directory
+* In your IDE Terminal, type the following command to clone my [Repository](https://github.com/Wxrren/Santas-Helpers)
 
-Forking the repository allows you to make a copy of the original repository on my GitHub account to view and change without affecting the original repository. To achieve this, follow these steps:
-
-1. Log in to GitHub and locate the GitHub GamerLeague [Repository](https://wxrren.github.io/win-a-car/)
-2. At the top of the Repository(above the about section) locate "Fork" button.
-
-![An image showing the repository page with Fork highlighted.](assets/images/fork-location.png "Fork Location")
-
-3. Once complete you should have a copy of the original repository in your GitHub account.
-
-* ### Local Clone
-
-1. Log in to GitHub and locate the GitHub GamerLeague [Repository](https://wxrren.github.io/win-a-car/)
-2. Above the list of files, click  Code.
-
-![An image showing the repository page with Fork highlighted.](assets/images/code.png "clone")
-
-3. Click on the code button, select clone with any of the options provided (These options are HTTPS, SSH or GitHub CLI) and copy the link shown.
-4. Open Git Bash
-5. Change the current working directory to the location where you want the cloned directory to be created.
-6. Type **GIT CLONE**, and then paste the URL you copied earlier.
-7. Press Enter to create your local clone.
-
+Press Enter to create your local clone.
 ## Credits
 
 ### Images:
