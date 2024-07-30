@@ -390,6 +390,9 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 * [Materialize](https://materializecss.com/typography.html)
     * Used for making web development faster. My usage was for card columns + forms
 
+* [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+    * A microframework used for scaling web apps faster. My usage was for creating a web page that handles data fast.
+
 ## Deployment and local Development.
 
 ### Relational Database Management System
