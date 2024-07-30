@@ -396,8 +396,8 @@ Testing consisted of using the W3C Markup and CSS Validator to go through each p
 
 This project uses [PostgreSQL](https://www.postgresql.org) for the relationable database management system.
 
-* To obtain your database to apply online first you had to go to [PostgreSQL](https://dbs.ci.net)
-* Enter your email address and hit submit. From here your database will be created and emailed to you.
+* To obtain your database you have to use Code Institute's database creator [PostgreSQL](https://dbs.ci.net) or use heroku's paid services for a database.
+* If using the Code Institute creator. Enter your email address and hit submit. From here your database will be created and emailed to you.
 
 ### Heroku
 
@@ -406,32 +406,32 @@ This project uses Heroku to build, run, and operate applications entirely in the
 To achieve this you have to:
 
 * Generate the requirements.txt file with the following command in the terminal. After you run this command a new file called requirements.txt should appear in your root directory.
-![Lighthouse scores for index page on Desktop.](santashelpers/static/images/requirements.png "Index desktop")
+![how to get requirements.txt .](santashelpers/static/images/requirements.png "Requirements")
 
 * Heroku requires a Procfile containing a command to run your program. Inside the root directory of your project create the new file. It must be called Procfile with a capital P, otherwise Heroku won’t recognise it. Inside the file, add the following command
 
-![Lighthouse scores for index page on Desktop.](santashelpers/static/images/procfile-image.png "Index desktop")
+![Procfile command.](santashelpers/static/images/procfile-image.png "Procfile")
 
-* To ensure that SQLAlchemy can also read our external database, its URL needs to start with “postgresql://”, but we should not change this in the environment variable. Instead, we’ll make an addition to our else statement from the previous step to adjust our DATABASE_URL in case it starts with postgres://:
+* To ensure that SQLAlchemy can also read the external database, its URL needs to start with “postgresql://”, but You can not change this in the environment variable. Instead, make an addition to the else statement to adjust the DATABASE_URL in case it starts with postgres://:
 
 ![An image showing the repository page with settings highlighted.](/santashelpers/static/images/db-for-loop.png "Settings")
 
 *  ### Heroku Deployment
 
-I used heroku to deploy the live site database. To do this I had to:
+I used heroku to deploy the live site database. To do this you have to:
 
 * Log into Heroku.com and click “New” and then “Create a new app”
-* Choose a unique name for your app, select the region closest to you and click “Create app”
+* Choose a unique name for the app, select the region closest to you and click “Create app”
 * Go to the Settings tab of your new app and click reveal config vars.
 * Add each of your other environment variables except DEVELOPMENT and DB_URL from the env.py file as a Config Var. The result should look something like this:
 
 ![An image showing the repository page with settings highlighted.](santashelpers/static/images/config%20vars.png "Settings")
-* Login to github, earch for your repo and click Connect.
-* Now, we have our project in place, It's tiome to take place adding tables to the database. Hit more then run console.
+* Login to github, search for your repository and click Connect.
+* Now, your project is in place, It's time to take place adding tables to the database. Hit more then run console.
 
 ![An image showing the repository page with settings highlighted.](santashelpers/static/images/run-console.png "Settings")
 * Type python3 into the console and click Run
-* once loaded type:  from santashelpers import db to imports our database. 
+* Once loaded type:  from santashelpers import db to import our database. 
 Once this loads type: - db.create_all().
 
 
