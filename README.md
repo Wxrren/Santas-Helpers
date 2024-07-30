@@ -483,7 +483,7 @@ Press Enter to create your local clone.
 * Information on CSS Grid was provided by: [Complete Guide Grid](https://css-tricks.com/snippets/css/complete-guide-grid/).
 * README Template provided by [Code Institute](https://github.com/Code-Institute-Solutions/SampleREADME) & [Markdown Template](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables).
 * Materialize was used to help with the card columns + forms. I used [materializecss.com](https://materializecss.com/getting-started.html).
-* Case sensitive search function: [stackoverflow](https://stackoverflow.com/questions/16573095/case-insensitive-flask-sqlalchemy-query) - I used some information from here to help assist my search function. I learned about iLike which helps when target args.
+* Case sensitive search function: [stackoverflow](https://stackoverflow.com/questions/16573095/case-insensitive-flask-sqlalchemy-query) - I used some information from here to help assist my search function. I learned about iLike which helps when targeting args.
 
 * I created this project inline with the course content of [Code Institure](https://codeinstitute.net/full-stack-software-development-diploma/?utm_term=code%20institute&utm_campaign=CI+-+UK+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=1578649861&hsa_grp=62188641240&hsa_ad=635720257674&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiAwP6sBhDAARIsAPfK_wZpFDXlxByAgIRT2S39rCz7auVaNWgJ2FF7efFEtX-oT-_qhvkTSiIaApIBEALw_wcB)
 
